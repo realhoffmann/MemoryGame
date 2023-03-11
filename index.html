@@ -16,37 +16,37 @@
     var name = prompt("Bitte Namen eingeben");
   </script>
 
+  <div class="container">
+    <div class="infobox">
+      <div class="labels">
+        Spieler:
+        <script>document.write(name);</script>
+      </div>
+      <div class="labels">
 
-  <div class="infobox">
-    <div class="labels">
-      Spieler:
-      <script>document.write(name);</script>
+      </div>
     </div>
-    <div class="labels">
 
+    <div id="spielbereich">
+      <div class="gameGrid"></div>
+    </div>
+
+    <div class=" infobox">
+      <div class="labels">
+        Versuche:
+        <span id="versuche">0</span>
+      </div>
+      <div class="labels">
+
+      </div>
+    </div>
+    <div class="infobox">
+      <div class="labels">
+        Zeit:
+        <span id="timer">0</span>
+      </div>
     </div>
   </div>
-
-  <div id="spielbereich">
-    <div class="gameGrid"></div>
-  </div>
-
-  <div class=" infobox">
-    <div class="labels">
-      Versuche:
-      <span id="versuche">0</span>
-    </div>
-    <div class="labels">
-
-    </div>
-  </div>
-  <div class="infobox">
-    <div class="labels">
-      Zeit:
-      <span id="timer">0</span>
-    </div>
-  </div>
-
 </body>
 
 </html>
