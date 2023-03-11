@@ -1,14 +1,22 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+    var attempts = 0;
+    var versuche = document.getElementById("versuche");
+    let cardsChosen = []
+    let cardsChosenId = []
+    let cardsWon = []
     var timer = document.getElementById("timer");
     var seconds = 0;
 
     function startTimer() {
-        seconds++;
-        timer.innerHTML = seconds;
+        if (cardsWon.length != 8) {
+            seconds++;
+            timer.innerHTML = seconds;
+        }
     }
 
     var interval = setInterval(startTimer, 1000);
+
 
     const cardArray = [
         { name: 'card1', img: 'pics/card1.png' },
@@ -31,11 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cardArray.sort(() => 0.5 - Math.random())
     const gameGrid = document.querySelector('.gameGrid')
-    var attempts = 0;
-    var versuche = document.getElementById("versuche");
-    let cardsChosen = []
-    let cardsChosenId = []
-    let cardsWon = []
+
 
 
     function createGrid() {
@@ -75,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cardsChosenId.push(cardId)
         this.setAttribute('src', cardArray[cardId].img)
         if (cardsChosen.length === 2) {
-            setTimeout(checkForMatch, 1000)
+            setTimeout(checkForMatch, 500)
         }
     }
 
