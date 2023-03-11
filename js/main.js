@@ -7,11 +7,19 @@ document.addEventListener("DOMContentLoaded", () => {
     let cardsWon = []
     var timer = document.getElementById("timer");
     var seconds = 0;
+    var timerOn = false;
+
+    function checkTimer() {
+        if (cardsChosen.length > 0) {
+            timerOn = true;
+        }
+    }
 
     function startTimer() {
-        if (cardsWon.length != 8) {
+        checkTimer();
+        if (timerOn == true && cardsWon.length != 8) {
             seconds++;
-            timer.innerHTML = seconds;
+            timer.innerHTML = seconds + "s";
         }
     }
 
@@ -57,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
         var cards = document.querySelectorAll('img')
         const optionOneId = cardsChosenId[0]
         const optionTwoId = cardsChosenId[1]
-        if (cardsChosen[0] === cardsChosen[1]) {
+        if (cardsChosen[0] == cardsChosen[1] && optionOneId != optionTwoId) {
             cards[optionOneId].setAttribute('src', 'pics/memoryBgI.png')
             cards[optionTwoId].setAttribute('src', 'pics/memoryBgI.png')
             cards[optionOneId].removeEventListener('click', flipCard)
@@ -71,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cardsChosenId = []
         attempts++;
         versuche.innerHTML = attempts;
+
     }
 
 
@@ -81,13 +90,10 @@ document.addEventListener("DOMContentLoaded", () => {
             cardsChosenId.push(cardId)
             this.setAttribute('src', cardArray[cardId].img)
             if (cardsChosen.length == 2) {
-                setTimeout(checkForMatch, 1000)
+                setTimeout(checkForMatch, 500)
             }
         }
     }
-
-
-
 
 });
 
