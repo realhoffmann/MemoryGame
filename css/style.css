@@ -9,6 +9,7 @@ body {
 }
 
 .labels {
+
 	font-variant: small-caps;
 	color: white;
 	text-shadow: 2px 2px #ab540f;
@@ -36,8 +37,8 @@ body {
 	margin-top: 30px;
 	margin-left: 10px;
 	float: left;
-	height: 276px;
-	width: 276px;
+	height: 268px;
+	width: 260px;
 }
 
 
@@ -50,5 +51,5 @@ body {
 }
 
 #spielbereich {
-	overflow: auto;
+	overflow: hidden;
 }
